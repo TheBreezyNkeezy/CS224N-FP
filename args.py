@@ -22,5 +22,18 @@ def get_train_test_args():
     parser.add_argument('--sub-file', type=str, default='')
     parser.add_argument('--visualize-predictions', action='store_true')
     parser.add_argument('--eval-every', type=int, default=5000)
+
+    parser.add_argument('--meta-train-dir', type=str, default="datasets/indomain_train/squad")
+    parser.add_argument('--meta-val-dir', type=str, default= "datasets/indomain_val/squad")
+    parser.add_argument('--save-meta-dir', type=str, default='save/meta_train_models/checkpoint')
+    parser.add_argument('--alpha', type=float, default=.02)
+    parser.add_argument('--beta', type=float, default=.1)
+    parser.add_argument('--num-iteration', type=int, default=10)
+    parser.add_argument('--batch', type=int, default=16)
+    parser.add_argument('--epoch-num', type=int, default=3)
+
+    
+    
+    
     args = parser.parse_args()
     return args
